@@ -2,7 +2,7 @@ import os
 import platform
 
 system = platform.system()
-delete_filetypes = ["xls", "xlsx", "docx"]
+delete_filetypes = ["xls", "xlsx", "docx", "csv"]
 path_to_look = "D:/"
 
 
