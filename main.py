@@ -1,9 +1,12 @@
+from dotenv import load_dotenv
 import os
 import platform
 
+load_dotenv()
+
 system = platform.system()
 delete_filetypes = ["xls", "xlsx", "docx", "csv"]
-path_to_look = "D:/"
+path_to_look = os.environ.get("LOOK_UP_PATH")
 
 
 def main(current_os, path):
