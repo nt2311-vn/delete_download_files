@@ -7,6 +7,9 @@ path_to_look = "D:/"
 
 
 def main(current_os, path):
+    if current_os != "Windows":
+        path = "/".join(path.split("\\"))
+
     deleted_file_name = []
     for file in os.listdir(path):
         file_path = os.path.join(path, file)
