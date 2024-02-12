@@ -1,19 +1,23 @@
-# Side projects to delete certain filetypes in a path and also check whether the file is openning, if yes
-# close it and delete it.
-
 import os
+import platform
 
-# Get current operating system
-os_name = os.name
-
-# Append the filetypes you want to delete
-delete_filetypes = ["xls"]
-
-# The path you want to delete
+system = platform.system()
+delete_filetypes = ["xls", "xlsx", "docx"]
+path_to_look = "D:/"
 
 
-def main(current_os):
-    print(current_os)
+def main(current_os, path):
+    deleted_file_name = []
+    for file in os.listdir(path):
+        file_path = os.path.join(path, file)
+        if os.path.isfile(file_path) and file.split(".")[1] in delete_filetypes:
+            try:
+                os.remove(file_path)
+                deleted_file_name.append(file)
+            except PermissionError:
+                print(f"Please close the file {file_path} and try again")
+
+    print(f"Deleted {len(deleted_file_name)} files completed: {deleted_file_name}")
 
 
-main(os_name)
+main(system, path_to_look)
