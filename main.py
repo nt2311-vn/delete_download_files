@@ -5,7 +5,7 @@ import platform
 load_dotenv()
 
 system = platform.system()
-delete_filetypes = ["xls", "xlsx", "docx", "csv"]
+delete_filetypes = {"xls": True, "xlsx": True, "csv": True, "docx": True}
 path_to_look = os.environ.get("LOOK_UP_PATH")
 
 
@@ -16,7 +16,7 @@ def main(current_os, path):
     deleted_file_name = []
     for file in os.listdir(path):
         file_path = os.path.join(path, file)
-        if os.path.isfile(file_path) and file.split(".")[1] in delete_filetypes:
+        if os.path.isfile(file_path) and delete_filetypes[file.split(".")[1]]:
             try:
                 os.remove(file_path)
                 deleted_file_name.append(file)
