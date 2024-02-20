@@ -16,7 +16,9 @@ def main(current_os, path):
     deleted_file_name = []
     for file in os.listdir(path):
         file_path = os.path.join(path, file)
-        if os.path.isfile(file_path) and delete_filetypes[file.split(".")[1]]:
+        if os.path.isfile(file_path) and delete_filetypes.get(
+            file.split(".")[-1], False
+        ):
             try:
                 os.remove(file_path)
                 deleted_file_name.append(file)
