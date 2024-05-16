@@ -5,7 +5,14 @@ import platform
 load_dotenv()
 
 system = platform.system()
-delete_filetypes = {"xls": True, "xlsx": True, "csv": True, "docx": True, "json": True}
+delete_filetypes = {
+    "xls": True,
+    "xlsx": True,
+    "csv": True,
+    "docx": True,
+    "json": True,
+    "xml": True,
+}
 path_to_look = os.environ.get("LOOK_UP_PATH")
 
 
