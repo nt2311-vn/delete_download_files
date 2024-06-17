@@ -7,6 +7,7 @@ load_dotenv()
 system = platform.system()
 delete_filetypes = {
     "xls": True,
+    "xlsb": True,
     "xlsx": True,
     "csv": True,
     "docx": True,
