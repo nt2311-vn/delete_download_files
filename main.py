@@ -11,6 +11,8 @@ delete_filetypes = {
     "xlsx": True,
     "csv": True,
     "docx": True,
+    "doc": True,
+    "xlsb": True,
     "json": True,
     "xml": True,
     "iqy": True,
